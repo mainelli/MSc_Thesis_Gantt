@@ -29,9 +29,9 @@
     var countdown = Math.abs(enddate-today);
     document.write("Today's date: " + showdate +"<br><br>");
     document.write(strikeThrough("P2 date: January 25, 2022") + "<br>");
-    document.write("P3 date: Preferably March 25, 28, or 29 <br>");
-    document.write("P4 date must occur between May 12 & 25: Preferably <b>Friday, May 20</b> <br>");
-    document.write("P5 date must occur between June 13 & July 01 : Preferably <b>Friday, June 24</b> <br><br>");
+    document.write("P3 date: <b>March 28, 2022</b> <br>");
+    document.write("P4 date: Preferably Friday, May 20 [must occur between May 12 & 25] <br>");
+    document.write("P5 date: <b>Friday, June 24</b> [must occur between June 13 & July 01] <br><br>");
 
     document.write("Days left until final presentation: " + Math.round(countdown/86400000));
 
@@ -76,7 +76,7 @@
         // ['litrev', 'Literature Review', 'research', new Date(2021, 8, 1), new Date(2022, 3, 1), , percent(new Date(2021, 8, 1), 210), null],
         // ['p1', 'P1: Refining Topic + Supervisors', 'evaluation', new Date(2021, 8, 1), new Date(2021, 8, 20), , percent(new Date(2021, 8, 1), 19), null],
         ['p2', 'P2: Assessment Research Proposal', 'evaluation', new Date(2022, 0, 21), new Date(2022, 0, 22), , percent(new Date(2022, 0, 21), 1), ''],
-        ['p3', 'P3: Midterm Progress Meeting', 'evaluation', new Date(2022, 2, 25), new Date(2022, 2, 29), , percent(new Date(2022, 2, 25), 1), 'prelim_results'],
+        ['p3', 'P3: Midterm Progress Meeting', 'evaluation', new Date(2022, 2, 28), new Date(2022, 2, 29), , percent(new Date(2022, 2, 28), 1), 'prelim_results'],
         ['p4', 'P4: Assessment Green Light', 'evaluation', new Date(2022, 4, 20), new Date(2022, 4, 21), , percent(new Date(2022, 4, 20), 1), 'p4_draft, p4_pres'],
         ['p5', 'P5: Assessment Final Presentation', 'evaluation', new Date(2022, 5, 24), new Date(2022, 5, 25), , percent(new Date(2022, 5, 24), 1), 'final_submit, p5_pres'],
 
