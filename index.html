@@ -22,16 +22,16 @@
     var mm = String(today.getMonth()).padStart(2, '0');
     var dd = String(today.getDate()).padStart(2, '0');
     var mm_forshow = String(today.getMonth() +1).padStart(2, '0');
-    var enddate = new Date("2022/6/24");
+    var enddate = new Date("2022/8/19");
 
     today = new Date(yyyy, mm, dd);
     showdate = yyyy + ' / ' + (mm_forshow) + ' / ' + dd;
     var countdown = Math.abs(enddate-today);
     document.write("Today's date: " + showdate +"<br><br>");
     document.write(strikeThrough("P2 date: January 25, 2022") + "<br>");
-    document.write("P3 date: <b>March 28, 2022</b> <br>");
-    document.write("P4 date: Preferably Friday, May 20 [must occur between May 12 & 25] <br>");
-    document.write("P5 date: <b>Friday, June 24</b> [must occur between June 13 & July 01] <br><br>");
+    document.write(strikeThrough("P3 date: March 28, 2022") + "<br>");
+    document.write("P4 date: <b>Thursday, June 30</b> [must occur between May 12 & 25] <br>");
+    document.write("P5 date: <b>Friday, August 19</b> [must occur between June 13 & July 01] <br><br>");
 
     document.write("Days left until final presentation: " + Math.round(countdown/86400000));
 
@@ -75,34 +75,31 @@
       // ID, name displayed, category tag, start date, end date, percentage calculation using number of days of duration, dependent upon another ID?
         // ['litrev', 'Literature Review', 'research', new Date(2021, 8, 1), new Date(2022, 3, 1), , percent(new Date(2021, 8, 1), 210), null],
         // ['p1', 'P1: Refining Topic + Supervisors', 'evaluation', new Date(2021, 8, 1), new Date(2021, 8, 20), , percent(new Date(2021, 8, 1), 19), null],
-        ['p2', 'P2: Assessment Research Proposal', 'evaluation', new Date(2022, 0, 21), new Date(2022, 0, 22), , percent(new Date(2022, 0, 21), 1), ''],
-        ['p3', 'P3: Midterm Progress Meeting', 'evaluation', new Date(2022, 2, 28), new Date(2022, 2, 29), , percent(new Date(2022, 2, 28), 1), 'prelim_results'],
-        ['p4', 'P4: Assessment Green Light', 'evaluation', new Date(2022, 4, 20), new Date(2022, 4, 21), , percent(new Date(2022, 4, 20), 1), 'p4_draft, p4_pres'],
-        ['p5', 'P5: Assessment Final Presentation', 'evaluation', new Date(2022, 5, 24), new Date(2022, 5, 25), , percent(new Date(2022, 5, 24), 1), 'final_submit, p5_pres'],
+        // ['p2', 'P2: Assessment Research Proposal', 'evaluation', new Date(2022, 0, 21), new Date(2022, 0, 22), , percent(new Date(2022, 0, 21), 1), ''],
+        // ['p3', 'P3: Midterm Progress Meeting', 'evaluation', new Date(2022, 2, 28), new Date(2022, 2, 29), , percent(new Date(2022, 2, 28), 1), 'prelim_results'],
+        ['p4_draft', 'Submitting Draft Thesis for P4', 'deadline', new Date(2022, 5, 23), new Date(2022, 5, 24), , percent(new Date(2022, 5, 23), 1), 'write_draft, write_draft2'],
+        ['p4', 'P4: Assessment Green Light', 'evaluation', new Date(2022, 5, 30), new Date(2022, 6, 1), , percent(new Date(2022, 5, 30), 1), 'p4_draft, p4_pres'],
+        ['final_submit', 'Submitting Final Thesis', 'deadline', new Date(2022, 7, 11), new Date(2022, 7, 12), , percent(new Date(2022, 7, 11), 1), 'finalise_report'],
+        ['p5', 'P5: Assessment Final Presentation', 'evaluation', new Date(2022, 7, 19), new Date(2022, 7, 20), , percent(new Date(2022, 7, 19), 1), 'final_submit, p5_pres'],
 
-        ['reqs', 'Defining list of requirements', 'research', new Date(2022, 1, 7), new Date(2022, 1, 18), , percent(new Date(2022, 1, 7), 11), 'p2'],
-        ['practise', 'Familiarising with Rhino Software and plugins', 'development', new Date(2022, 1, 7), new Date(2022, 1, 15), , percent(new Date(2022, 1, 7), 8), 'p2'],
-        ['data_collect', 'Collecting Point Cloud Data', 'data', new Date(2022, 1, 11), new Date(2022, 1, 15), , percent(new Date(2022, 1, 11), 4), 'p2'],
-        ['data_classify', 'Classifying Data into Space Types and Boundaries', 'data', new Date(2022, 1, 14), new Date(2022, 1, 18), , percent(new Date(2022, 1, 14), 4), 'data_collect'],
-        ['proof_concept', 'Generating Proof of Concept Isovist Visualisations', 'development', new Date(2022, 1, 21), new Date(2022, 2, 4), , percent(new Date(2022, 1, 21), 11), 'data_classify'],
+        ['reqs', 'Finalise List of Requirements', 'research', new Date(2022, 4, 16), new Date(2022, 4, 20), , percent(new Date(2022, 4, 16), 5), ''],
+        ['write_draft', 'Writing Draft', 'writing', new Date(2022, 4, 16), new Date(2022, 4, 27), , percent(new Date(2022, 4, 16), 10), ''],
+        ['data_classify', 'Better Classify My Data into Space Types w/CloudCompare', 'data', new Date(2022, 4, 23), new Date(2022, 4, 27), , percent(new Date(2022, 4, 23), 5), ''],
+        ['visibility_analysis', 'Define visible/occluded points', 'data', new Date(2022, 4, 30), new Date(2022, 5, 3), , percent(new Date(2022, 4, 30), 5), 'data_classify'],
+        ['build', 'Building Solutions and Visualisations', 'development', new Date(2022, 5, 6), new Date(2022, 5, 17), , percent(new Date(2022, 5, 6), 10), 'visibility_analysis'],
+        ['user_testing', 'Performing User Testing', 'research', new Date(2022, 5, 20), new Date(2022, 5, 24), , percent(new Date(2022, 5, 20), 5), 'build'],
+        ['write_draft2', 'Finishing Report for P4', 'writing', new Date(2022, 5, 13), new Date(2022, 5, 23), , percent(new Date(2022, 5, 13), 9), ''],
 
-        ['holiday', 'Spring Break', 'holiday', new Date(2022, 2, 7), new Date(2022, 2, 11), , percent(new Date(2022, 2, 7), 5), ''],
+        ['p4_pres', 'Preparing P4 Presentation and Materials', 'presentation', new Date(2022, 5, 27), new Date(2022, 5, 29), , percent(new Date(2022, 5, 27), 3), 'p4_draft'],
+        ['finalise_report', 'Finishing Report based off of P4 Feedback', 'writing', new Date(2022, 6, 4), new Date(2022, 6, 15), , percent(new Date(2022, 6, 4), 10), 'p4'],
+        ['p5_pres', 'Preparing Final Presentation', 'presentation', new Date(2022, 6, 20), new Date(2022, 6, 26), , percent(new Date(2022, 6, 20), 5), ''],
 
-        ['build', 'Building Solution(s) Guided by List of Requirements', 'development', new Date(2022, 2, 14), new Date(2022, 2, 25), , percent(new Date(2022, 2, 14), 11), 'reqs, proof_concept'],
-        ['prelim_results', 'Gathering Preliminary Results for P3 Meeting', 'presentation', new Date(2022, 2, 23), new Date(2022, 2, 24), , percent(new Date(2022, 2, 23), 2), 'build'],
+        // ['practise', 'Familiarising with Rhino Software and plugins', 'development', new Date(2022, 1, 7), new Date(2022, 1, 15), , percent(new Date(2022, 1, 7), 8), 'p2'],
+        // ['evaluate', 'Evaluating Solution(s) Against List of Requirements', 'research', new Date(2022, 3, 4), new Date(2022, 3, 6), , percent(new Date(2022, 3, 4), 2), 'refine1'],
+        // ['refine2', 'Refining Solution(s) based upon Evaluation [& user testing]', 'development', new Date(2022, 3, 7), new Date(2022, 3, 29), , percent(new Date(2022, 3, 7), 21), 'evaluate'],
 
-        ['refine1', 'Refining Designs, partially based upon P3 Feedback', 'development', new Date(2022, 2, 28), new Date(2022, 3, 1), , percent(new Date(2022, 2, 28), 5), 'build, p3'],
-        ['evaluate', 'Evaluating Solution(s) Against List of Requirements', 'research', new Date(2022, 3, 4), new Date(2022, 3, 6), , percent(new Date(2022, 3, 4), 2), 'refine1'],
-        ['user_testing', 'Potentially Performing User Testing [if time allows]', 'research', new Date(2022, 2, 28), new Date(2022, 3, 14), , percent(new Date(2022, 2, 28), 17), 'refine1'],
-        ['refine2', 'Refining Solution(s) based upon Evaluation [& user testing]', 'development', new Date(2022, 3, 7), new Date(2022, 3, 29), , percent(new Date(2022, 3, 7), 21), 'evaluate'],
-        ['write_draft', 'Beginning with Writing Thesis', 'writing', new Date(2022, 3, 7), new Date(2022, 4, 12), , percent(new Date(2022, 3, 7), 35), 'evaluate'],
-        ['p4_draft', 'Submitting Draft Thesis for P4', 'deadline', new Date(2022, 4, 13), new Date(2022, 4, 14), , percent(new Date(2022, 4, 13), 1), 'write_draft, refine2'],
-        ['p4_pres', 'Preparing P4 Presentation and Materials', 'presentation', new Date(2022, 4, 16), new Date(2022, 4, 20), , percent(new Date(2022, 5, 16), 4), 'p4_draft'],
-
-        ['finalise_report', 'Finalising Thesis based off of P4 Feedback', 'writing', new Date(2022, 4, 23), new Date(2022, 5, 16), , percent(new Date(2022, 4, 23), 34), 'p4'],
-        ['final_submit', 'Submitting Final Thesis', 'deadline', new Date(2022, 5, 17), new Date(2022, 5, 18), , percent(new Date(2022, 5, 17), 1), 'finalise_report'],
-        ['p5_pres', 'Preparing Final Presentation', 'presentation', new Date(2022, 5, 20), new Date(2022, 5, 23), , percent(new Date(2022, 5, 20), 4), 'final_submit'],
-
+        ['holiday', 'Holiday', 'holiday', new Date(2022, 6, 27), new Date(2022, 7, 3), , percent(new Date(2022, 6, 27), 8), ''],
+        ['ldn', 'In London', 'holiday', new Date(2022, 6, 19), new Date(2022, 7, 17), , percent(new Date(2022, 6, 19), 30), ''],
       ]);
 
       var options = {
